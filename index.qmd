@@ -1,5 +1,6 @@
 ---
 title: "Workshop Exercise: Emissions Data - Table, Map, and Chart"
+author: Moudo Macina
 format: html
 ---
 
@@ -38,10 +39,6 @@ import plotly.express as px
 from itables import show
 import country_converter as coco
 pd.set_option("mode.copy_on_write", True)
-```
-
-```{python}
-from itables import show
 ```
 
 Load in your dataset from gapminder below. View it in your data viewer to get an idea of the structure.
@@ -161,7 +158,7 @@ This will be animated by year.
 ```{python}
 # Convert country names to ISO3 codes
 emissions_long_1990_2022["country_code"] = coco.convert(
-    emissions_long_1990_2022["country"], to="ISO3"
+    emissions_long_1990_2022["country"], to="ISO3",  not_found=None
 )
 
 fig_map = px.choropleth(
